@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element -- static Vite build, images are local WebP assets */
+
 import { FormEvent, useEffect, useState } from "react";
 
 const teams = [
@@ -80,49 +82,31 @@ export default function Home() {
           <a href="#security" onClick={() => setMenuOpen(false)}>Безопасность</a>
           <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
         </nav>
-        <a className="button button-dark header-cta" href="#contact">Начать сейчас <Arrow /></a>
+        <a className="button button-dark header-cta" href="#contact">Начать сейчас</a>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">Маркетинговые материалы нового поколения</p>
-          <h1>Всё создаётся<br />в рамках вашего бренда<br />и дизайн-системы</h1>
-          <p>Подключите дизайн-систему к Снэпбилду, чтобы каждый участник команды создавал профессиональные материалы за минуты, а не дни.</p>
-          <a className="button button-light" href="#contact">Начать сейчас <Arrow /></a>
-        </div>
-        <div className="app-preview" aria-label="Пример интерфейса Снэпбилда">
-          <aside className="app-sidebar">
-            <BrandMark />
-            <div className="search">⌕ <span>Поиск</span><kbd>⌘K</kbd></div>
-            <div className="create">✦ <span>Создать</span></div>
-            <p>Материалы</p>
-            {['Все сайты','Изображения','Видео','Презентации','Баннеры'].map((item, index) => <div className={index === 0 ? "side-item active" : "side-item"} key={item}><i />{item}</div>)}
-            <p>База знаний</p>
-            {['Дизайн-система','Пресеты','Инструменты'].map(item => <div className="side-item" key={item}><i />{item}</div>)}
-          </aside>
-          <div className="app-main">
-            <div className="window-dots"><i /><i /><i /></div>
-            <div className="prompt-wrap">
-              <span className="ai-orb">✦</span>
-              <h2>Алексей, создадим что-то новое?</h2>
-              <div className="prompt"><span>Опишите, что вы хотите создать…</span><button aria-label="Отправить запрос">↑</button></div>
-              <div className="prompt-tags"><span>▣ Веб-сайт</span><span>▧ Изображение</span><span>▶ Видео</span><span>▱ Презентация</span></div>
-            </div>
+          <div className="hero-heading">
+            <h1>Платформа, где все создается в рамках вашего бренда и дизайн‑системы</h1>
+            <p>Подключите дизайн-систему к Снэпбилду, чтобы каждый участник команды мог создавать профессиональные материалы в фирменном стиле за минуты, а не дни.</p>
           </div>
+          <a className="button button-light hero-cta" href="#contact">Начать сейчас</a>
         </div>
+        <img className="app-preview-image" src="/assets/hero-snapbuild.webp" alt="Интерфейс платформы Снэпбилд" />
       </section>
 
       <section className="logos" aria-label="Компании" data-reveal>
         <p>С платформой работают команды, для которых бренд — закон</p>
-        <div className="marquee"><div>{['OZON','МТС','ЯНДЕКС','Kaspersky','Альфа-Банк','VK','OZON','МТС','ЯНДЕКС'].map((logo, i) => <span key={`${logo}-${i}`}>{logo}</span>)}</div></div>
+        <div className="marquee"><div>{['logo-1.svg','logo-2.svg','logo-avito.svg','logo-cian.svg','logo-lenta.svg','logo-1.svg','logo-2.svg','logo-avito.svg','logo-cian.svg','logo-lenta.svg'].map((logo, i) => <img src={`/assets/${logo}`} alt="" key={`${logo}-${i}`} />)}</div></div>
       </section>
 
       <section className="section product" id="product" data-reveal>
-        <div className="section-heading"><p className="eyebrow">Единая платформа</p><h2>Одна идея — весь маркетинг</h2><p>Сайты, изображения, видео, баннеры и презентации — в вашем стиле.</p></div>
+        <div className="section-heading"><h2>Одна платформа — весь маркетинг</h2><p>Сайты, изображения, видео, баннеры и презентации — из одной идеи, в вашем стиле</p></div>
         <div className="feature-grid">
-          <article className="feature-card visual-core"><div className="core-visual"><span>Brand core</span><i /><i /><i /></div><h3>Дизайн-система — ядро платформы</h3><p>Ваши компоненты, цвета и шрифты — единственный источник стиля.</p></article>
-          <article className="feature-card"><div className="rules-visual"><span>Цвет</span><b>#FFB8EB</b><span>Радиус</span><b>16 px</b><span>Сетка</span><b>12 col</b></div><h3>Гибкая конфигурация</h3><p>Правила бренда задаются один раз и работают в каждой генерации.</p></article>
-          <article className="feature-card"><div className="check-visual"><i>✓</i><div><b>Brand check</b><span>Все правила соблюдены</span></div></div><h3>Соответствие по умолчанию</h3><p>AI не может нарушить бренд: контроль встроен в систему.</p></article>
+          <article className="feature-card"><img src="/assets/process-design-system.webp" alt="" /><h3>Дизайн-система — ядро платформы</h3><p>Ваши компоненты, цвета и шрифты — единственный источник стиля</p></article>
+          <article className="feature-card"><img src="/assets/process-flexible.webp" alt="" /><h3>Гибкая конфигурация</h3><p>Правила бренда задаются один раз — работают в каждой генерации</p></article>
+          <article className="feature-card"><img src="/assets/process-compliance.webp" alt="" /><h3>Соответствие по умолчанию</h3><p>AI не может нарушить бренд: сайты, изображения, видео, баннеры и презентации — строго по вашим правилам</p></article>
         </div>
       </section>
 
@@ -155,7 +139,7 @@ export default function Home() {
       </section>
 
       <section className="section compare" data-reveal>
-        <div className="section-heading"><p className="eyebrow">Преимущества</p><h2>Почему команды выбирают Снэпбилд</h2><p>Вы получаете не редактор, а готовый результат без проблем с настройками.</p></div>
+        <div className="section-heading"><h2>Почему команды выбирают Снэпбилд</h2><p>Вы получаете не редактор, а результат: готовые маркетинговые материалы без проблем с настройками</p></div>
         <div className="compare-table" role="table" aria-label="Сравнение решений">
           <div className="tr head" role="row"><span>Особенности</span><b>снэпбилд</b><span>AI + Figma</span><span>No-code</span><span>Традиционно</span></div>
           {[['Time-to-market','5 минут','30–60 мин','2–3 дня','3–5 недель'],['Дизайн-система','100% точность','Частично','Шаблоны','Через ревью'],['Визуальный редактор','✓ + AI','—','✓','—'],['Требуемые навыки','Нет','Промпты + код','Дизайн','Полная команда']].map((row)=><div className="tr" role="row" key={row[0]}>{row.map((cell,i)=>i===1?<b key={cell}>{cell}</b>:<span key={cell}>{cell}</span>)}</div>)}
@@ -170,7 +154,7 @@ export default function Home() {
       </section>
 
       <section className="section security" id="security" data-reveal>
-        <div className="section-heading"><p className="eyebrow">Безопасность</p><h2>Без компромиссов</h2></div>
+        <div className="section-heading"><h2>Безопасность без компромиссов</h2></div>
         <div className="security-grid">
           <article className="security-main"><div className="shield"><i>✓</i></div><h3>Ваш контур, ваша юрисдикция</h3><p>Развёртывание в частном облаке с соответствием требованиям компании и 152-ФЗ.</p></article>
           <article><span className="security-icon">◎</span><h3>Только одобренные модели</h3><p>Российские и локализованные модели без экспортных ограничений.</p></article>
@@ -188,7 +172,7 @@ export default function Home() {
       </section>
 
       <section className="section roadmap" data-reveal>
-        <div className="section-heading split"><div><p className="eyebrow">Развитие продукта</p><h2>Каждый день —<br />новый релиз</h2></div><p>Приоритизируем бэклог под задачи команд, которые уже работают с платформой.</p></div>
+        <div className="section-heading split"><div><h2>Каждый день — новый релиз</h2></div><p>Приоритизируем бэклог для ваших целей</p></div>
         <div className="roadmap-track">{roadmap.map(([date,title,text],i)=><article key={title}><div className="road-dot"><i /></div><span>{date}</span><h3>{title}</h3><p>{text}</p><b>0{i+1}</b></article>)}</div>
       </section>
 
