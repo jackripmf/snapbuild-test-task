@@ -12,11 +12,36 @@ const teams = [
 ];
 
 const formats = [
-  { id: "sites", label: "Сайты", title: "Страница за один запрос", text: "Загрузите бриф или ссылку — Снэпбилд предложит структуру, напишет тексты и соберёт адаптивную страницу.", view: "site" },
-  { id: "images", label: "Изображения", title: "Графика в стиле бренда", text: "Создавайте иллюстрации и рекламные креативы в единой стилистике, затем меняйте формат без потери композиции.", view: "image" },
-  { id: "video", label: "Видео", title: "Видео из ключевых кадров", text: "Соберите ролик из фирменных изображений, управляйте сценами и выпускайте версии для разных площадок.", view: "video" },
-  { id: "banners", label: "Баннеры", title: "Мастер-баннер и все ресайзы", text: "Одна композиция превращается в набор адаптаций под площадки и плейсменты с сохранением фокусной точки.", view: "banner" },
-  { id: "slides", label: "Презентации", title: "Питч-дек в вашей системе", text: "Превратите документ или идею в презентацию с готовой структурой и компонентами бренда.", view: "slides" },
+  { id: "sites", label: "Сайты", features: [
+    ["Результат за один запрос", "Отправляйте документ или ссылку на описание продукта — платформа собирает структуру"],
+    ["Страница за минуту", "В вашей дизайн-системе, с вашими шрифтами, сеткой и компонентами"],
+    ["AI или визуальный редактор", "Меняйте контент через чат или редактируйте вручную"],
+    ["Адаптация под ЦА за один клик", "Версия сайта под новый сегмент без работы дизайнеров и копирайтеров"],
+  ], images: ["use-site-1.webp","use-site-2.webp","use-site-3.webp","use-site-4.webp"] },
+  { id: "images", label: "Изображения", features: [
+    ["В стиле и цвете бренда", "Изображения по композиционным правилам вашей дизайн-системы"],
+    ["Попадание с первой генерации", "Без часов промптинга и поиска на стоках"],
+    ["Редактирование объектов", "Меняйте композицию и удаляйте элементы прямо на изображении"],
+    ["Любой стиль и формат", "Портреты, иллюстрации, обложки — в нужном соотношении, до 4K"],
+  ], images: ["use-image-1.webp","use-image-2.webp","use-image-3.webp","use-image-4.webp"] },
+  { id: "video", label: "Видео", features: [
+    ["Изображения как ключевые кадры", "Используйте графику из модуля изображений напрямую"],
+    ["Контроль качества и формата", "Длительность, соотношение, качество — под площадку"],
+    ["Сохранение стиля и композиции", "AI удерживает визуальную целостность ролика"],
+    ["Один сценарий — десятки адаптаций", "Версии под популярные форматы соцсетей и рекламные площадки"],
+  ], images: ["use-video-1.webp","use-video-2.webp","use-video-3.webp","use-video-4.webp"] },
+  { id: "banners", label: "Баннеры", features: [
+    ["Креативы из одной идеи", "Готовые баннеры в фирменном стиле для любой кампании"],
+    ["Все размеры автоматически", "Готовые размеры популярных площадок или собственные — без ручной пересборки"],
+    ["Текст и графика под контролем", "Редактируйте оффер, композицию и визуальные акценты"],
+    ["Экспорт под площадку", "Форматы и вес файлов соответствуют требованиям размещения"],
+  ], images: ["use-banner-1.webp","use-banner-2.webp","use-banner-3.webp","use-banner-4.webp"] },
+  { id: "slides", label: "Презентации", features: [
+    ["Презентация из запроса", "Платформа собирает структуру и черновик слайдов"],
+    ["В вашей дизайн-системе", "Шрифты, сетки и компоненты применяются автоматически"],
+    ["Редактирование через AI", "Меняйте отдельный слайд или всю историю через чат"],
+    ["Экспорт в нужном формате", "Собирайте презентации для встречи, рассылки или публикации"],
+  ], images: ["use-slides-1.jpg","use-slides-2.webp","use-slides-3.webp","use-slides-4.webp"] },
 ];
 
 const faqs = [
@@ -27,9 +52,18 @@ const faqs = [
 ];
 
 const roadmap = [
-  ["Сейчас", "Компонентный подход", "AI компонует страницы из элементов вашей дизайн-библиотеки."],
-  ["Далее", "Предиктивные рекомендации", "Платформа предлагает, что улучшить в кампании и материалах."],
-  ["Следом", "Инфраструктура", "Развёртывание в сети и контуре вашей компании."],
+  ["Декабрь, 2025", "Сайты за 5 минут", "Генерация корпоративных сайтов по вашей дизайн-системе — 100% консистентность, без разработчиков"],
+  ["Январь, 2026", "Консистентные AI-иллюстрации", "Настраиваете фирменный стиль один раз — графика для каждой секции сайта в едином виде через стилевые пресеты"],
+  ["Февраль, 2026", "Дизайн-система из вашего сайта", "Сканируем существующие страницы и собираем из них готовую дизайн-систему; AI сам выстраивает структуру"],
+  ["Март, 2026", "Режим изображений", "Брендовая графика в один клик: управление стилями и темами, десятки параметров редактирования"],
+  ["Апрель, 2026", "Генерация видео", "Видео из ваших изображений с ключевыми кадрами; AI точнее на 78%, панель рассуждений и управление правами"],
+  ["Май, 2026", "Ресайзы изображений", "Одна фокус-точка → все форматы (16:9, 9:16, 1:1 и другие) с автоматическим бюджетом веса на экспорт"],
+  ["Июнь, 2026", "Расширенный редактор, как в Figma", "Слои, изменение размеров любого контейнера, превью структуры в чате, версии промптов и ветвление диалогов"],
+  ["Июль, 2026", "Канвас, баннеры и презентации", "Канвас во всех режимах; новые режимы — генерация рекламных баннеров и корпоративных презентаций"],
+  ["Август, 2026", "ИИ-маркетолог", "Следит за данными, сам обновляет ваши материалы и собирает кампанию целиком — от изображений до сайта"],
+  ["Сентябрь, 2026", "Компонентный подход", "AI сам компонует секции сайтов из элементов вашей дизайн-библиотеки"],
+  ["Октябрь, 2026", "Предиктивные рекомендации", "Платформа сама предлагает, что обновить в кампаниях — от секций сайта до баннеров"],
+  ["Ноябрь, 2026", "Инфраструктура", "Развертывание в вашей сети и контуре"],
 ];
 
 function BrandMark() {
@@ -44,6 +78,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [team, setTeam] = useState(0);
   const [format, setFormat] = useState(0);
+  const [formatFeature, setFormatFeature] = useState(0);
   const [faq, setFaq] = useState(0);
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -56,6 +91,11 @@ export default function Home() {
     nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setFormatFeature((current) => (current + 1) % 4), 4500);
+    return () => window.clearInterval(timer);
+  }, [format]);
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -78,11 +118,11 @@ export default function Home() {
         <button className="menu-button" aria-label="Открыть меню" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
         <nav className={menuOpen ? "nav is-open" : "nav"} aria-label="Основная навигация">
           <a href="#product" onClick={() => setMenuOpen(false)}>Продукт</a>
-          <a href="#teams" onClick={() => setMenuOpen(false)}>Возможности</a>
+          <a href="#formats" onClick={() => setMenuOpen(false)}>Возможности</a>
           <a href="#security" onClick={() => setMenuOpen(false)}>Безопасность</a>
           <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
         </nav>
-        <a className="button button-dark header-cta" href="#contact">Начать сейчас</a>
+        <a className="button button-dark header-cta" href="#contact"><span>Начать сейчас</span></a>
       </header>
 
       <section className="hero" id="top">
@@ -91,7 +131,7 @@ export default function Home() {
             <h1>Платформа, где все создается в рамках вашего бренда и дизайн‑системы</h1>
             <p>Подключите дизайн-систему к Снэпбилду, чтобы каждый участник команды мог создавать профессиональные материалы в фирменном стиле за минуты, а не дни.</p>
           </div>
-          <a className="button button-light hero-cta" href="#contact">Начать сейчас</a>
+          <a className="button button-light hero-cta" href="#contact"><span>Начать сейчас</span></a>
         </div>
         <img className="app-preview-image" src="/assets/hero-snapbuild.webp" alt="Интерфейс платформы Снэпбилд" />
       </section>
@@ -120,14 +160,12 @@ export default function Home() {
       </section>
 
       <section className="section formats" id="formats" data-reveal>
-        <div className="section-heading center"><p className="eyebrow">Все форматы</p><h2>Любой контент в фирменном стиле<br />за считанные минуты</h2></div>
-        <div className="format-tabs" role="tablist" aria-label="Форматы">{formats.map((item,index)=><button key={item.id} role="tab" aria-selected={format===index} onClick={()=>setFormat(index)}>{item.label}</button>)}</div>
+        <div className="format-header"><h2>Любой контент в фирменном стиле за считанные минуты</h2>
+          <div className="format-tabs" role="tablist" aria-label="Форматы">{formats.map((item,index)=><button key={item.id} role="tab" aria-selected={format===index} onClick={()=>{setFormat(index);setFormatFeature(0)}}>{item.label}</button>)}</div>
+        </div>
         <div className="format-panel">
-          <div className="format-copy"><span>0{format+1}</span><h3>{formats[format].title}</h3><p>{formats[format].text}</p><a href="#contact">Попробовать формат <Arrow /></a></div>
-          <div className={`format-stage ${formats[format].view}`}>
-            <div className="stage-toolbar"><i/><i/><i/><span>{formats[format].label}</span></div>
-            <div className="stage-canvas"><div className="stage-gradient" /><div className="stage-lines"><b /><b /><b /></div><button>Создать</button></div>
-          </div>
+          <div className="format-features">{formats[format].features.map(([title,text],index)=><button className={formatFeature===index?"active":""} onClick={()=>setFormatFeature(index)} key={title}><strong>{title}</strong><span>{text}</span></button>)}</div>
+          <div className="format-preview"><img src={`/assets/${formats[format].images[formatFeature]}`} alt={`Пример: ${formats[format].features[formatFeature][0]}`} /></div>
         </div>
       </section>
 
@@ -138,11 +176,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section compare" data-reveal>
+      <section className="section compare" id="compare" data-reveal>
         <div className="section-heading"><h2>Почему команды выбирают Снэпбилд</h2><p>Вы получаете не редактор, а результат: готовые маркетинговые материалы без проблем с настройками</p></div>
         <div className="compare-table" role="table" aria-label="Сравнение решений">
-          <div className="tr head" role="row"><span>Особенности</span><b>снэпбилд</b><span>AI + Figma</span><span>No-code</span><span>Традиционно</span></div>
-          {[['Time-to-market','5 минут','30–60 мин','2–3 дня','3–5 недель'],['Дизайн-система','100% точность','Частично','Шаблоны','Через ревью'],['Визуальный редактор','✓ + AI','—','✓','—'],['Требуемые навыки','Нет','Промпты + код','Дизайн','Полная команда']].map((row)=><div className="tr" role="row" key={row[0]}>{row.map((cell,i)=>i===1?<b key={`${i}-${cell}`}>{cell}</b>:<span key={`${i}-${cell}`}>{cell}</span>)}</div>)}
+          <div className="tr head" role="row"><span>Особенности</span><b>снэпбилд</b><span>Claude + Figma MCP</span><span>No-code платформы</span><span>Cursor</span><span>Традиционный</span></div>
+          {[['Time-to-market','5 минут','30–60 мин','2–3 дня','1–2 дня','3–5 недель'],['Дизайн-система','100% точность','Частично, из Figma','Шаблоны','Вручную в коде','Вручную, через ревью'],['Визуальный редактор','✓ + ИИ','—','✓','—','—'],['Требуемые навыки','Нет','Промпты + код','Дизайн','Разработка','Полная команда']].map((row)=><div className="tr" role="row" key={row[0]}>{row.map((cell,i)=>i===1?<b key={`${i}-${cell}`}>{cell}</b>:<span key={`${i}-${cell}`}>{cell}</span>)}</div>)}
         </div>
       </section>
 
@@ -156,9 +194,9 @@ export default function Home() {
       <section className="section security" id="security" data-reveal>
         <div className="section-heading"><h2>Безопасность без компромиссов</h2></div>
         <div className="security-grid">
-          <article className="security-main"><div className="shield"><i>✓</i></div><h3>Ваш контур, ваша юрисдикция</h3><p>Развёртывание в частном облаке с соответствием требованиям компании и 152-ФЗ.</p></article>
-          <article><span className="security-icon">◎</span><h3>Только одобренные модели</h3><p>Российские и локализованные модели без экспортных ограничений.</p></article>
-          <article><span className="security-icon">⌘</span><h3>Собственный AI-стек</h3><p>Вы определяете модели, хранилища, доступы и цепочки валидации.</p></article>
+          <article><img src="/assets/security-models.webp" alt="" /><h3>Только одобренные модели</h3><p>Работаем только с российскими и локализованными моделями, без экспортных ограничений</p></article>
+          <article><img src="/assets/security-cloud.webp" alt="" /><h3>Ваш контур, ваша юрисдикция</h3><p>Развертывание в частном облаке с полным соответствием 152-ФЗ и внутренними ИБ-требованиями</p></article>
+          <article><img src="/assets/security-stack.webp" alt="" /><h3>Собственный AI-стек</h3><p>Вы сами определяете модели, хранилища, доступы и цепочки валидации</p></article>
         </div>
       </section>
 
@@ -171,9 +209,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section roadmap" data-reveal>
-        <div className="section-heading split"><div><h2>Каждый день — новый релиз</h2></div><p>Приоритизируем бэклог для ваших целей</p></div>
-        <div className="roadmap-track">{roadmap.map(([date,title,text],i)=><article key={title}><div className="road-dot"><i /></div><span>{date}</span><h3>{title}</h3><p>{text}</p><b>0{i+1}</b></article>)}</div>
+      <section className="section roadmap" id="roadmap" data-reveal>
+        <div className="section-heading"><h2>Каждый день — новый релиз</h2><p>Приоритизируем бэклог для ваших целей</p></div>
+        <div className="roadmap-viewport"><div className="roadmap-track">{roadmap.map(([date,title,text])=><article key={title}><div className="road-dot"><i /></div><h3>{title}</h3><p>{text}</p><span>{date}</span></article>)}</div></div>
       </section>
 
       <section className="section faq" id="faq" data-reveal>
@@ -195,9 +233,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="final-cta" data-reveal><div><BrandMark /><h2>Профессиональные материалы<br />в фирменном стиле<br /><span>за минуты, а не дни</span></h2><a className="button button-light" href="#contact">Начать сейчас <Arrow /></a></div></section>
+      <section className="final-cta" data-reveal><div><BrandMark /><h2>Профессиональные материалы<br />в фирменном стиле<br /><span>за минуты, а не дни</span></h2><a className="button button-light launch-cta" href="#contact"><span>Начать сейчас</span></a></div></section>
 
-      <footer className="footer"><div className="footer-brand"><BrandMark /><p>Платформа, где всё создаётся в рамках вашего бренда и дизайн-системы.</p></div><div><b>Навигация</b><a href="#product">Продукт</a><a href="#teams">Возможности</a><a href="#security">Безопасность</a><a href="#faq">FAQ</a></div><div><b>Контакты</b><a href="mailto:hey@snapbuild.ru">hey@snapbuild.ru</a><a href="#contact">Запросить демо</a></div><p className="copyright">© 2026 Снэпбилд. Все права защищены.</p></footer>
+      <footer className="footer"><div className="footer-brand"><BrandMark /><p>Платформа, где всё создаётся в рамках вашего бренда и дизайн-системы.</p></div><div><b>Навигация</b><a href="#product">Продукт</a><a href="#formats">Возможности</a><a href="#security">Безопасность</a><a href="#faq">FAQ</a></div><div><b>Контакты</b><a href="mailto:hey@snapbuild.ru">hey@snapbuild.ru</a><a href="#contact">Запросить демо</a></div><p className="copyright">© 2026 Снэпбилд. Все права защищены.</p></footer>
     </main>
   );
 }
