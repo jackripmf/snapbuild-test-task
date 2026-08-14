@@ -107,7 +107,7 @@ section[id]{scroll-margin-top:160px}
 .roadmap{padding:28.4444px 0 85.3333px;overflow:hidden}
 .roadmap .section-heading{padding:0 max(35.5556px,calc((100% - 1200px)/2));margin-bottom:49.7778px}
 .roadmap-viewport{overflow:hidden;width:100%;padding-top:8px;margin-top:-8px}
-.roadmap-track{display:flex;width:max-content;margin-left:max(35.5556px,calc((100% - 1200px)/2));border-top:1px solid #ff8bb7}
+.roadmap-track{display:flex;width:max-content;margin-left:35.5556px;border-top:1px solid #ff8bb7}
 .roadmap-track article,.roadmap-track article:not(:first-child){position:relative;flex:0 0 284.4375px;width:284.4375px;height:199.0156px;padding:57.7778px 34px 0 0;border:0}
 .road-dot,.roadmap-track article:not(:first-child) .road-dot{position:absolute;top:-7px;left:0;width:14px;height:14px;border:0;border-radius:50%;background:#ff92bc;box-shadow:0 0 0 6px rgba(255,146,188,.13)}
 .road-dot i{width:5px;height:5px;background:#ff6eaa}
