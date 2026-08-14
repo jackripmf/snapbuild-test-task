@@ -106,8 +106,8 @@ section[id]{scroll-margin-top:160px}
 
 .roadmap{padding:28.4444px 0 85.3333px;overflow:hidden}
 .roadmap .section-heading{padding:0 max(35.5556px,calc((100% - 1200px)/2));margin-bottom:49.7778px}
-.roadmap-viewport{overflow:hidden;width:100%;padding-top:8px;margin-top:-8px}
-.roadmap-track{display:flex;width:max-content;margin-left:35.5556px;border-top:1px solid #ff8bb7}
+.roadmap-viewport{overflow:hidden;width:min(1200px,calc(100% - 71.1112px));margin:-8px auto 0;padding-top:8px}
+.roadmap-track{display:flex;width:max-content;margin-left:0;border-top:1px solid #ff8bb7}
 .roadmap-track article,.roadmap-track article:not(:first-child){position:relative;flex:0 0 284.4375px;width:284.4375px;height:199.0156px;padding:57.7778px 34px 0 0;border:0}
 .road-dot,.roadmap-track article:not(:first-child) .road-dot{position:absolute;top:-7px;left:0;width:14px;height:14px;border:0;border-radius:50%;background:#ff92bc;box-shadow:0 0 0 6px rgba(255,146,188,.13)}
 .road-dot i{width:5px;height:5px;background:#ff6eaa}
@@ -222,7 +222,7 @@ section[id]{scroll-margin-top:160px}
 @media(max-width:600px){
   .format-header h2{font-size:36px;line-height:39px}.format-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.format-panel{margin-top:30px}.format-features{grid-template-columns:1fr}.format-features button{min-height:72px}.format-preview{aspect-ratio:4/3}
   .security-grid{grid-template-columns:1fr}.security-grid article:last-child{grid-column:auto}.security-grid article:last-child img{aspect-ratio:1}
-  .roadmap{padding-top:76px}.roadmap .section-heading{padding:0 18px}.roadmap-track{margin-left:18px;border-top:1px solid #ff8bb7}.roadmap-track article,.roadmap-track article:not(:first-child){flex-basis:260px;width:260px;height:215px;padding:48px 28px 0 0;border:0}
+  .roadmap{padding-top:76px}.roadmap .section-heading{padding:0 18px}.roadmap-viewport{width:calc(100% - 36px)}.roadmap-track{margin-left:0;border-top:1px solid #ff8bb7}.roadmap-track article,.roadmap-track article:not(:first-child){flex-basis:260px;width:260px;height:215px;padding:48px 28px 0 0;border:0}
 }
 
 @media(max-width:900px){
