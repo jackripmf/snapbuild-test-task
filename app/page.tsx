@@ -2,6 +2,8 @@
 
 import { FormEvent, useEffect, useState } from "react";
 
+const asset = (file: string) => `./assets/${file}`;
+
 const teams = [
   { id: "marketing", label: "Маркетинг", title: "Кампания целиком — из одного брифа", text: "Соберите лендинг, баннеры и презентацию в единой дизайн-системе. Адаптируйте материалы под сегменты без повторной постановки задачи.", stat: "5 форматов", note: "готовы к запуску", previewTitle: "Запуск новой линейки", accent: "peach", outputs: [["Лендинг", "Desktop + mobile", "page"], ["Баннеры", "6 размеров", "banner"], ["Презентация", "12 слайдов", "slides"]] },
   { id: "design", label: "Дизайн", title: "Бренд-контроль без ручной рутины", text: "Задайте компоненты, сетку, цвета и типографику один раз. Команда создаёт материалы самостоятельно, а дизайн остаётся консистентным.", stat: "100%", note: "правила применены", previewTitle: "Дизайн-система бренда", accent: "lilac", outputs: [["Компоненты", "48 элементов", "components"], ["Токены", "Цвета и типографика", "tokens"], ["Brand-check", "Без отклонений", "check"]] },
@@ -135,20 +137,20 @@ export default function Home() {
           </div>
           <a className="button button-light hero-cta" href="#contact"><span>Начать сейчас</span></a>
         </div>
-        <img className="app-preview-image" src="/assets/hero-snapbuild.webp" alt="Интерфейс платформы Снэпбилд" />
+        <img className="app-preview-image" src={asset("hero-snapbuild.webp")} alt="Интерфейс платформы Снэпбилд" />
       </section>
 
       <section className="logos" aria-label="Компании" data-reveal>
         <p>С платформой работают команды, для которых бренд — закон</p>
-        <div className="marquee"><div>{['logo-1.svg','logo-2.svg','logo-avito.svg','logo-cian.svg','logo-lenta.svg','logo-1.svg','logo-2.svg','logo-avito.svg','logo-cian.svg','logo-lenta.svg'].map((logo, i) => <img src={`/assets/${logo}`} alt="" key={`${logo}-${i}`} />)}</div></div>
+        <div className="marquee"><div>{['logo-1.svg','logo-2.svg','logo-avito.svg','logo-cian.svg','logo-lenta.svg','logo-1.svg','logo-2.svg','logo-avito.svg','logo-cian.svg','logo-lenta.svg'].map((logo, i) => <img src={asset(logo)} alt="" key={`${logo}-${i}`} />)}</div></div>
       </section>
 
       <section className="section product" id="product" data-reveal>
         <div className="section-heading"><h2>Одна платформа — весь маркетинг</h2><p>Сайты, изображения, видео, баннеры и презентации — из одной идеи, в вашем стиле</p></div>
         <div className="feature-grid">
-          <article className="feature-card"><img src="/assets/process-design-system.webp" alt="" /><h3>Дизайн-система — ядро платформы</h3><p>Ваши компоненты, цвета и шрифты — единственный источник стиля</p></article>
-          <article className="feature-card"><img src="/assets/process-flexible.webp" alt="" /><h3>Гибкая конфигурация</h3><p>Правила бренда задаются один раз — работают в каждой генерации</p></article>
-          <article className="feature-card"><img src="/assets/process-compliance.webp" alt="" /><h3>Соответствие по умолчанию</h3><p>AI не может нарушить бренд: сайты, изображения, видео, баннеры и презентации — строго по вашим правилам</p></article>
+          <article className="feature-card"><img src={asset("process-design-system.webp")} alt="" /><h3>Дизайн-система — ядро платформы</h3><p>Ваши компоненты, цвета и шрифты — единственный источник стиля</p></article>
+          <article className="feature-card"><img src={asset("process-flexible.webp")} alt="" /><h3>Гибкая конфигурация</h3><p>Правила бренда задаются один раз — работают в каждой генерации</p></article>
+          <article className="feature-card"><img src={asset("process-compliance.webp")} alt="" /><h3>Соответствие по умолчанию</h3><p>AI не может нарушить бренд: сайты, изображения, видео, баннеры и презентации — строго по вашим правилам</p></article>
         </div>
       </section>
 
@@ -171,7 +173,7 @@ export default function Home() {
         </div>
         <div className="format-panel">
           <div className="format-features">{formats[format].features.map(([title,text],index)=><button className={formatFeature===index?"active":""} onClick={()=>setFormatFeature(index)} key={title}><strong>{title}</strong><span>{text}</span></button>)}</div>
-          <div className="format-preview"><img src={`/assets/${formats[format].images[formatFeature]}`} alt={`Пример: ${formats[format].features[formatFeature][0]}`} /></div>
+          <div className="format-preview"><img src={asset(formats[format].images[formatFeature])} alt={`Пример: ${formats[format].features[formatFeature][0]}`} /></div>
         </div>
       </section>
 
@@ -206,9 +208,9 @@ export default function Home() {
       <section className="section security" id="security" data-reveal>
         <div className="section-heading"><h2>Безопасность без компромиссов</h2></div>
         <div className="security-grid">
-          <article><img src="/assets/security-models.webp" alt="" /><h3>Только одобренные модели</h3><p>Работаем только с российскими и локализованными моделями, без экспортных ограничений</p></article>
-          <article><img src="/assets/security-cloud.webp" alt="" /><h3>Ваш контур, ваша юрисдикция</h3><p>Развертывание в частном облаке с полным соответствием 152-ФЗ и внутренними ИБ-требованиями</p></article>
-          <article><img src="/assets/security-stack.webp" alt="" /><h3>Собственный AI-стек</h3><p>Вы сами определяете модели, хранилища, доступы и цепочки валидации</p></article>
+          <article><img src={asset("security-models.webp")} alt="" /><h3>Только одобренные модели</h3><p>Работаем только с российскими и локализованными моделями, без экспортных ограничений</p></article>
+          <article><img src={asset("security-cloud.webp")} alt="" /><h3>Ваш контур, ваша юрисдикция</h3><p>Развертывание в частном облаке с полным соответствием 152-ФЗ и внутренними ИБ-требованиями</p></article>
+          <article><img src={asset("security-stack.webp")} alt="" /><h3>Собственный AI-стек</h3><p>Вы сами определяете модели, хранилища, доступы и цепочки валидации</p></article>
         </div>
       </section>
 
