@@ -5,10 +5,10 @@
 import { FormEvent, useEffect, useState } from "react";
 
 const teams = [
-  { id: "marketing", label: "Маркетинг", title: "Кампании целиком — из одной идеи", text: "Соберите лендинг, баннеры, презентацию и видео в единой дизайн-системе. Адаптируйте материалы под сегменты без повторной постановки задачи.", stat: "5 форматов", note: "из одного брифа", accent: "peach" },
-  { id: "design", label: "Дизайн", title: "Бренд-контроль без ручной рутины", text: "Задайте компоненты, сетку, цвета и типографику один раз. Команда создаёт материалы самостоятельно, а дизайн остаётся консистентным.", stat: "100%", note: "в рамках дизайн-системы", accent: "lilac" },
-  { id: "sales", label: "Продажи", title: "Материалы под клиента за минуты", text: "Превращайте коммерческое предложение в персональную страницу или презентацию — с нужными кейсами, аргументами и фирменным оформлением.", stat: "1 запрос", note: "до готового материала", accent: "blue" },
-  { id: "product", label: "Продукт", title: "Быстрее проверяйте новые гипотезы", text: "Запускайте страницы под сегменты и сценарии до постановки задачи в разработку. Уточняйте контент через чат или визуальный редактор.", stat: "×7", note: "быстрее до проверки", accent: "mint" },
+  { id: "marketing", label: "Маркетинг", title: "Кампания целиком — из одного брифа", text: "Соберите лендинг, баннеры и презентацию в единой дизайн-системе. Адаптируйте материалы под сегменты без повторной постановки задачи.", stat: "5 форматов", note: "готовы к запуску", previewTitle: "Запуск новой линейки", accent: "peach", outputs: [["Лендинг", "Desktop + mobile", "page"], ["Баннеры", "6 размеров", "banner"], ["Презентация", "12 слайдов", "slides"]] },
+  { id: "design", label: "Дизайн", title: "Бренд-контроль без ручной рутины", text: "Задайте компоненты, сетку, цвета и типографику один раз. Команда создаёт материалы самостоятельно, а дизайн остаётся консистентным.", stat: "100%", note: "правила применены", previewTitle: "Дизайн-система бренда", accent: "lilac", outputs: [["Компоненты", "48 элементов", "components"], ["Токены", "Цвета и типографика", "tokens"], ["Brand-check", "Без отклонений", "check"]] },
+  { id: "sales", label: "Продажи", title: "Материалы под клиента за минуты", text: "Превращайте коммерческое предложение в персональную страницу или презентацию — с нужными кейсами, аргументами и фирменным оформлением.", stat: "1 запрос", note: "персонализировано", previewTitle: "Предложение для клиента", accent: "blue", outputs: [["Страница клиента", "Персональный оффер", "page"], ["Коммерческое предложение", "PDF, 8 страниц", "document"], ["Презентация", "Для встречи", "slides"]] },
+  { id: "product", label: "Продукт", title: "Быстрее проверяйте новые гипотезы", text: "Запускайте страницы под сегменты и сценарии до постановки задачи в разработку. Уточняйте контент через чат или визуальный редактор.", stat: "×7", note: "быстрее до проверки", previewTitle: "Гипотеза нового сценария", accent: "mint", outputs: [["Лендинг гипотезы", "Готов к трафику", "page"], ["A/B-варианты", "3 версии", "variants"], ["Сегменты", "4 аудитории", "segments"]] },
 ];
 
 const formats = [
@@ -155,7 +155,11 @@ export default function Home() {
         <div className="team-tabs" role="tablist" aria-label="Команды">{teams.map((item, index) => <button key={item.id} role="tab" aria-selected={team === index} onClick={() => setTeam(index)}>{item.label}</button>)}</div>
         <div className={`team-panel ${teams[team].accent}`}>
           <div><p className="panel-number">0{team + 1}</p><h3>{teams[team].title}</h3><p>{teams[team].text}</p><a href="#contact">Обсудить задачу <Arrow /></a></div>
-          <div className="team-stat"><span>{teams[team].stat}</span><p>{teams[team].note}</p><div className="mini-chart">{[44,68,51,82,64,94].map((h,i)=><i style={{height:`${h}%`}} key={i} />)}</div></div>
+          <div className="team-output">
+            <div className="team-output-head"><div><span>Проект</span><strong>{teams[team].previewTitle}</strong></div><b>{teams[team].stat}</b></div>
+            <div className="output-grid">{teams[team].outputs.map(([label,meta,kind])=><article className={`output-card output-${kind}`} key={label}><div className="output-thumb"><i /><i /><i /></div><strong>{label}</strong><span>{meta}</span></article>)}</div>
+            <div className="team-output-foot"><span><i /> В рамках дизайн-системы</span><b>{teams[team].note}</b></div>
+          </div>
         </div>
       </section>
 
@@ -172,7 +176,7 @@ export default function Home() {
       <section className="section workflow" id="workflow" data-reveal>
         <div className="section-heading split"><div><p className="eyebrow">Как это работает</p><h2>От брифа до кампании —<br />один управляемый процесс</h2></div><p>Снэпбилд сохраняет контекст, дизайн-правила и версии на каждом шаге.</p></div>
         <div className="flow-line">
-          {[['01','Дайте контекст','Документ, ссылка или короткий запрос'],['02','Получите основу','Структура, тексты и визуальное направление'],['03','Уточните детали','Правки через чат или визуальный редактор'],['04','Выпустите набор','Все форматы и размеры из одного проекта']].map(([n,t,d])=><article key={n}><span>{n}</span><div className="flow-icon"><i /></div><h3>{t}</h3><p>{d}</p></article>)}
+          {[['01','Дайте контекст','Документ, ссылка или короткий запрос'],['02','Получите основу','Структура, тексты и визуальное направление'],['03','Уточните детали','Правки через чат или визуальный редактор'],['04','Выпустите набор','Все форматы и размеры из одного проекта']].map(([n,t,d])=><article key={n}><span>{n}</span><div className={`flow-icon flow-${n}`}><i /><b /><em /></div><h3>{t}</h3><p>{d}</p></article>)}
         </div>
       </section>
 
