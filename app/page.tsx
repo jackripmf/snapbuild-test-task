@@ -142,7 +142,7 @@ export default function Home() {
         <div className="section-heading"><h2>Почему команды выбирают Снэпбилд</h2><p>Вы получаете не редактор, а результат: готовые маркетинговые материалы без проблем с настройками</p></div>
         <div className="compare-table" role="table" aria-label="Сравнение решений">
           <div className="tr head" role="row"><span>Особенности</span><b>снэпбилд</b><span>AI + Figma</span><span>No-code</span><span>Традиционно</span></div>
-          {[['Time-to-market','5 минут','30–60 мин','2–3 дня','3–5 недель'],['Дизайн-система','100% точность','Частично','Шаблоны','Через ревью'],['Визуальный редактор','✓ + AI','—','✓','—'],['Требуемые навыки','Нет','Промпты + код','Дизайн','Полная команда']].map((row)=><div className="tr" role="row" key={row[0]}>{row.map((cell,i)=>i===1?<b key={cell}>{cell}</b>:<span key={cell}>{cell}</span>)}</div>)}
+          {[['Time-to-market','5 минут','30–60 мин','2–3 дня','3–5 недель'],['Дизайн-система','100% точность','Частично','Шаблоны','Через ревью'],['Визуальный редактор','✓ + AI','—','✓','—'],['Требуемые навыки','Нет','Промпты + код','Дизайн','Полная команда']].map((row)=><div className="tr" role="row" key={row[0]}>{row.map((cell,i)=>i===1?<b key={`${i}-${cell}`}>{cell}</b>:<span key={`${i}-${cell}`}>{cell}</span>)}</div>)}
         </div>
       </section>
 
