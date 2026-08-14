@@ -169,7 +169,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section workflow" data-reveal>
+      <section className="section workflow" id="workflow" data-reveal>
         <div className="section-heading split"><div><p className="eyebrow">Как это работает</p><h2>От брифа до кампании —<br />один управляемый процесс</h2></div><p>Снэпбилд сохраняет контекст, дизайн-правила и версии на каждом шаге.</p></div>
         <div className="flow-line">
           {[['01','Дайте контекст','Документ, ссылка или короткий запрос'],['02','Получите основу','Структура, тексты и визуальное направление'],['03','Уточните детали','Правки через чат или визуальный редактор'],['04','Выпустите набор','Все форматы и размеры из одного проекта']].map(([n,t,d])=><article key={n}><span>{n}</span><div className="flow-icon"><i /></div><h3>{t}</h3><p>{d}</p></article>)}
@@ -184,7 +184,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section integrations" data-reveal>
+      <section className="section integrations" id="integrations" data-reveal>
         <div className="integration-shell">
           <div className="integration-copy"><p className="eyebrow">Интеграции</p><h2>Встраивается<br />в ваш процесс</h2><p>Снэпбилд соединяет дизайн, контент и разработку. Результат не заперт внутри платформы.</p><a className="button button-light" href="#contact">Обсудить интеграцию <Arrow /></a></div>
           <div className="orbit" aria-label="Интеграции"><div className="orbit-core"><BrandMark /></div>{['Figma','GitHub','React','CMS','API','GitLab'].map((item,i)=><span className={`orbit-item item-${i+1}`} key={item}>{item}</span>)}</div>
@@ -200,7 +200,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section deployment" data-reveal>
+      <section className="section deployment" id="deployment" data-reveal>
         <div className="section-heading split"><div><p className="eyebrow">Форматы подключения</p><h2>Подключение под<br />вашу инфраструктуру</h2></div><p>Начните с пилота и масштабируйте решение без смены дизайн-системы и процессов.</p></div>
         <div className="deploy-grid">
           <article><span>Быстрый старт</span><h3>Облачный пилот</h3><p>Проверка сценариев на одной команде и реальных материалах.</p><ul><li>Подключение дизайн-системы</li><li>Совместная настройка</li><li>Готовность к масштабированию</li></ul><a href="#contact">Запросить пилот <Arrow /></a></article>

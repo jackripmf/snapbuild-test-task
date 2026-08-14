@@ -110,7 +110,7 @@ section[id]{scroll-margin-top:160px}
 
 .roadmap{padding:28.4444px 0 85.3333px;overflow:hidden}
 .roadmap .section-heading{padding:0 35.5556px;margin-bottom:49.7778px}
-.roadmap-viewport{overflow:hidden;width:100%}
+.roadmap-viewport{overflow:hidden;width:100%;padding-top:8px;margin-top:-8px}
 .roadmap-track{display:flex;width:max-content;margin-left:35.5556px;border-top:1px solid #ff8bb7}
 .roadmap-track article,.roadmap-track article:not(:first-child){position:relative;flex:0 0 284.4375px;width:284.4375px;height:199.0156px;padding:57.7778px 34px 0 0;border:0}
 .road-dot,.roadmap-track article:not(:first-child) .road-dot{position:absolute;top:-7px;left:0;width:14px;height:14px;border:0;border-radius:50%;background:#ff92bc;box-shadow:0 0 0 6px rgba(255,146,188,.13)}
@@ -118,6 +118,74 @@ section[id]{scroll-margin-top:160px}
 .roadmap-track h3{font-size:14.2222px;line-height:18px;font-weight:500;letter-spacing:0;margin:0 0 10px}
 .roadmap-track p{font-size:12.4444px;line-height:17.7778px;color:#77787e;margin:0 0 10px;max-width:235px}
 .roadmap-track article>span{font-size:12.4444px;line-height:17.7778px;color:#111;margin-top:auto}
+
+/* Added sections: aligned to the visual system of the reference page. */
+.teams{margin:0;background:transparent;color:#111;border-radius:0;padding:28.4444px 35.5556px 113.7778px}
+.teams .eyebrow,.integrations .eyebrow{color:#7a7b82}
+.teams .section-heading>p{color:#5a5b62}
+.team-tabs{gap:4px;margin:0 0 28.4444px}
+.team-tabs button{border:0;border-radius:12px;padding:10px 14px;background:transparent;color:#111;font-size:14.2222px;line-height:18px;font-weight:500}
+.team-tabs button:hover{background:#ececef}
+.team-tabs button[aria-selected="true"]{background:#111;color:#fff}
+.team-panel{grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);min-height:388px;padding:35.5556px;gap:28.4444px;border-radius:20px;background:#fff!important}
+.team-panel:before{content:"";position:absolute;inset:0 36% 0 0;pointer-events:none;background:radial-gradient(circle at 12% 20%,rgba(255,255,255,.92),transparent 43%),linear-gradient(135deg,rgba(255,224,204,.58),rgba(255,184,216,.32) 58%,transparent)}
+.team-panel.lilac:before{background:radial-gradient(circle at 12% 20%,rgba(255,255,255,.92),transparent 43%),linear-gradient(135deg,rgba(235,225,255,.74),rgba(202,198,255,.35) 58%,transparent)}
+.team-panel.blue:before{background:radial-gradient(circle at 12% 20%,rgba(255,255,255,.92),transparent 43%),linear-gradient(135deg,rgba(224,242,255,.8),rgba(194,219,255,.36) 58%,transparent)}
+.team-panel.mint:before{background:radial-gradient(circle at 12% 20%,rgba(255,255,255,.92),transparent 43%),linear-gradient(135deg,rgba(229,252,240,.8),rgba(186,237,213,.36) 58%,transparent)}
+.team-panel>div{position:relative;z-index:1}
+.panel-number{font-size:12.4444px;line-height:17.7778px;font-weight:500;color:#77787e}
+.team-panel h3{font-size:40.96px;line-height:45.056px;font-weight:500;letter-spacing:-.025em;margin:70px 0 14px;max-width:570px}
+.team-panel>div>p:not(.panel-number){font-size:14.2222px;line-height:21.3333px;color:#5a5b62;max-width:520px;margin:0}
+.team-panel a,.deploy-grid a{font-size:14.2222px;line-height:18px;font-weight:500;margin-top:24px;border:0;padding:0}
+.team-stat{min-height:316px;border:1px solid rgba(0,0,0,.06);border-radius:16px;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);padding:28.4444px}
+.team-stat>span{font-size:56.8889px;line-height:1;font-weight:500;letter-spacing:-.035em}
+.team-stat>p{font-size:12.4444px;line-height:17.7778px;color:#77787e;margin:7px 0}
+.mini-chart{height:112px;gap:7px}
+.mini-chart i{background:linear-gradient(180deg,#ff92bc,#d7b4ff);border-radius:5px 5px 2px 2px;opacity:1}
+
+.workflow{padding-top:28.4444px}
+.workflow .section-heading{margin-bottom:28.4444px}
+.flow-line{padding:28.4444px;background:#fff;border-radius:20px;gap:0;overflow:hidden}
+.flow-line:before{top:72px;left:8%;right:8%;background:#ff9abc}
+.flow-line article{padding:0 22px}
+.flow-line article>span{font-size:12.4444px;line-height:17.7778px;color:#9a9aa0}
+.flow-icon{width:14px;height:14px;margin:23px 0 32px;border:0;background:#ff92bc;box-shadow:0 0 0 6px rgba(255,146,188,.13)}
+.flow-icon:before,.flow-icon:after{display:none}.flow-icon i{width:5px;height:5px;border:0;background:#ff6eaa}
+.flow-line h3{font-size:18px;line-height:23px;font-weight:500;letter-spacing:-.01em;margin:0 0 7px}
+.flow-line p{font-size:12.4444px;line-height:17.7778px;color:#77787e;margin:0;max-width:225px}
+
+.integrations{padding:28.4444px 35.5556px 113.7778px}
+.integration-shell{min-height:488px;padding:35.5556px;grid-template-columns:minmax(300px,.8fr) minmax(420px,1.2fr);gap:56px;border-radius:20px;background:linear-gradient(135deg,#fff 7%,#fff2eb 48%,#f4e9ff 100%);color:#111}
+.integration-copy h2{font-size:46.2222px;line-height:56.8903px;font-weight:500;letter-spacing:-.025em;margin:0 0 14px}
+.integration-copy>p:not(.eyebrow){font-size:14.2222px;line-height:21.3333px;color:#5a5b62;max-width:430px;margin:0}
+.integration-copy .button{margin-top:24px;background:#111;color:#fff;font-size:14px}
+.integration-copy .button:hover{background:#28282b}
+.orbit{height:416px;border-color:rgba(0,0,0,.11)}
+.orbit:before,.orbit:after{border-color:rgba(0,0,0,.09)}
+.orbit-core{width:128px;height:128px;border-radius:32px;box-shadow:0 22px 60px rgba(220,112,180,.16)}
+.orbit-item{padding:10px 16px;background:rgba(255,255,255,.9);border:1px solid rgba(0,0,0,.08);border-radius:12px;color:#111;font-size:12.4444px;line-height:17.7778px;box-shadow:0 10px 28px rgba(35,25,40,.08)}
+
+.deployment{background:transparent}
+.deployment .section-heading{margin-bottom:28.4444px}
+.deploy-grid{gap:28.4444px}
+.deploy-grid article{min-height:410px;border-radius:20px;padding:28.4444px;background:#fff;box-shadow:none}
+.deploy-grid article:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(0,0,0,.055)}
+.deploy-grid article.featured{background:linear-gradient(145deg,#fff3eb,#ffc9da 58%,#dedbff);color:#111}
+.deploy-grid article>span{font-size:11px;line-height:15px;font-weight:500;color:#8a8b91}
+.deploy-grid h3{font-size:28.4444px;line-height:34px;font-weight:500;letter-spacing:-.025em;margin:38px 0 10px}
+.deploy-grid p,.deploy-grid .featured p{font-size:14.2222px;line-height:21.3333px;color:#5a5b62;margin:0}
+.deploy-grid ul{margin:28px 0 0}
+.deploy-grid li{font-size:12.4444px;line-height:17.7778px;padding:10px 0;border-color:#ececef}
+.deploy-grid li:before{content:"✓";color:#ff6eaa}
+
+.contact{padding-top:28.4444px}
+.contact-card{padding:56.8889px;gap:56.8889px;border-radius:20px;background:linear-gradient(157deg,#fff 8%,#ffdfcf 46%,#ffc2dd 70%,#dfe0ff 100%)}
+.contact-copy h2{font-size:46.2222px;line-height:50px;font-weight:500;letter-spacing:-.025em;margin:0 0 14px}
+.contact-copy>p:not(.eyebrow){font-size:14.2222px;line-height:21.3333px;color:#5a5b62;margin:0}
+.contact-note{margin-top:35.5556px}
+.contact-note i{width:32px;height:32px;font-size:13px}
+.contact form,.success{padding:28.4444px;border-radius:16px;background:rgba(255,255,255,.88)}
+.contact input,.contact select{height:44px;border-radius:10px}
 
 .hero-cta>span,.launch-cta>span{color:transparent;background:linear-gradient(90deg,#ff6d3c 0%,#ff6ba7 46%,#bb6dff 100%);background-clip:text;-webkit-background-clip:text}
 .header-cta>span{color:transparent;background:linear-gradient(90deg,#fff 0%,#fff 37%,#777 50%,#fff 63%,#fff 100%);background-size:220% 100%;background-clip:text;-webkit-background-clip:text;animation:cta-shine 3.4s linear infinite}
@@ -138,6 +206,24 @@ section[id]{scroll-margin-top:160px}
   .format-header h2{font-size:36px;line-height:39px}.format-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.format-panel{margin-top:30px}.format-features{grid-template-columns:1fr}.format-features button{min-height:72px}.format-preview{aspect-ratio:4/3}
   .security-grid{grid-template-columns:1fr}.security-grid article:last-child{grid-column:auto}.security-grid article:last-child img{aspect-ratio:1}
   .roadmap{padding-top:76px}.roadmap .section-heading{padding:0 18px}.roadmap-track{margin-left:18px;border-top:1px solid #ff8bb7}.roadmap-track article,.roadmap-track article:not(:first-child){flex-basis:260px;width:260px;height:215px;padding:48px 28px 0 0;border:0}
+}
+
+@media(max-width:900px){
+  .teams,.integrations{margin:0;padding:88px 24px}
+  .team-panel{grid-template-columns:1fr;padding:30px;gap:24px}.team-panel:before{inset:0}.team-panel h3{margin-top:48px}.team-stat{min-height:260px}
+  .workflow{padding-top:88px}.flow-line{grid-template-columns:1fr 1fr;gap:32px;padding:30px}.flow-line:before{display:none}.flow-line article{padding:0}
+  .flow-icon{width:14px;height:14px;margin:20px 0 28px}.flow-icon:before,.flow-icon:after{display:none}.flow-icon i{width:5px;height:5px}
+  .integration-shell{grid-template-columns:1fr;padding:42px;gap:24px}.orbit{height:390px}
+  .deploy-grid{grid-template-columns:1fr 1fr}.deploy-grid article:last-child{grid-column:1/-1}
+  .contact-card{padding:42px;gap:36px}
+}
+@media(max-width:600px){
+  .teams,.integrations{margin:0;padding:76px 18px}.team-tabs{overflow-x:auto;gap:2px}.team-tabs button{white-space:nowrap;padding:9px 12px}
+  .team-panel{padding:24px}.team-panel h3{font-size:34px;line-height:38px;margin-top:38px}.team-stat{min-height:230px;padding:24px}.team-stat>span{font-size:48px}
+  .workflow{padding-top:76px}.flow-line{grid-template-columns:1fr;padding:24px;gap:32px}.flow-line article{display:block}.flow-line article>span,.flow-line h3,.flow-line p{display:block}.flow-icon{margin:15px 0 24px}
+  .integration-shell{padding:36px 24px;min-height:0}.integration-copy h2{font-size:40px;line-height:44px}.orbit{height:320px}.orbit-core{width:100px;height:100px;border-radius:26px}.orbit-item{font-size:10px;padding:7px 10px}
+  .deployment{padding-left:18px;padding-right:18px}.deploy-grid{grid-template-columns:1fr}.deploy-grid article:last-child{grid-column:auto}.deploy-grid article{min-height:370px}
+  .contact{padding:76px 6px}.contact-card{padding:42px 20px;gap:36px}.contact-copy h2{font-size:40px;line-height:44px}.contact form{grid-template-columns:1fr;padding:22px}.contact label:nth-child(4),.contact form>button,.contact form>small{grid-column:auto}
 }
 
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}[data-reveal]{opacity:1;transform:none}}
