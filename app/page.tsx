@@ -45,10 +45,14 @@ const formats = [
 ];
 
 const faqs = [
-  ["Что можно создавать в Снэпбилде?", "Сайты, изображения, видео, баннеры и презентации — в едином фирменном стиле. Из одной идеи получается полный набор материалов для кампании."],
-  ["Как подключается дизайн-система?", "Платформа анализирует ваши страницы, компоненты, цвета, сетку и типографику. После настройки эти правила автоматически применяются к новым материалам."],
-  ["Можно ли интегрировать результат в текущую разработку?", "Да. Результат можно передать в существующий процесс разработки и контроля версий. Поддерживаются React, Vue, Angular и чистый HTML/CSS."],
-  ["Подходит ли платформа для закрытого контура?", "Да. Возможны частное облако и изолированная инфраструктура без передачи корпоративных данных во внешние сервисы."],
+  ["Что можно создавать в Снэпбилде?", "Все основные форматы маркетинговых материалов — сайты, изображения, видео, баннеры и презентации. Всё создаётся в рамках вашего бренда: из одной идеи получается полный набор материалов компании."],
+  ["Как работает анализ бренда?", "Система анализирует существующие интерфейсы, графические материалы и компоненты. Выделяются цветовые схемы, типографика, сетки, отступы и архитектура элементов. На основе этих данных формируется модель дизайн-системы."],
+  ["Можно ли экспортировать решение в существующую инфраструктуру?", "Да. Система формирует чистую структуру интерфейса для React, Vue, Angular и HTML/CSS, интеграции с GitHub, GitLab и CI/CD."],
+  ["Действительно ли интерфейс полностью соответствует дизайн-системе?", "Да. Каждый элемент формируется строго по правилам вашей архитектуры: цвета, типографика, отступы и состояния компонентов. Контроль встроен на уровне системы."],
+  ["В чем отличие от универсальных систем на базе искусственного интеллекта?", "Универсальные решения гибкие, но нестабильные в применении бренд-правил. Снэпбилд строит интерфейсы в рамках корпоративной архитектуры, с учётом бизнес-логики и требований безопасности."],
+  ["Чем это отличается от конструкторов без программирования?", "Конструкторы используют жёсткие шаблоны. Здесь применяется компонентная архитектура с гарантированным соблюдением дизайн-системы — это управляемая система сборки интерфейсов."],
+  ["В чем отличие от популярных AI-инструментов для создания сайтов?", "Снэпбилд сочетает скорость генерации с автоматическим соблюдением вашей дизайн-системы, интеграцией бизнес-логики и работой в контуре безопасности компании."],
+  ["Возможна ли работа в закрытом корпоративном облаке?", "Да. Поддерживается развёртывание в изолированной инфраструктуре без доступа к внешней сети. Данные и вычисления остаются внутри вашей корпоративной среды."],
 ];
 
 const roadmap = [
@@ -79,7 +83,7 @@ export default function Home() {
   const [team, setTeam] = useState(0);
   const [format, setFormat] = useState(0);
   const [formatFeature, setFormatFeature] = useState(0);
-  const [faq, setFaq] = useState(0);
+  const [faq, setFaq] = useState(-1);
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -191,7 +195,13 @@ export default function Home() {
       <section className="section integrations" id="integrations" data-reveal>
         <div className="integration-shell">
           <div className="integration-copy"><p className="eyebrow">Интеграции</p><h2>Встраивается<br />в ваш процесс</h2><p>Снэпбилд соединяет дизайн, контент и разработку. Результат не заперт внутри платформы.</p><a className="button button-light" href="#contact">Обсудить интеграцию <Arrow /></a></div>
-          <div className="orbit" aria-label="Интеграции"><div className="orbit-core"><BrandMark /></div>{['Figma','GitHub','React','CMS','API','GitLab'].map((item,i)=><span className={`orbit-item item-${i+1}`} key={item}>{item}</span>)}</div>
+          <div className="integration-board" aria-label="Схема интеграций">
+            <div className="integration-board-head"><span>Рабочий контур</span><b><i /> Все системы подключены</b></div>
+            <div className="integration-rows">
+              {[['Figma','Дизайн-система','Синхронизация токенов'],['CMS','Контент','Данные и публикации'],['GitHub / GitLab','Разработка','Экспорт и контроль версий']].map(([source,area,result])=><div className="integration-row" key={source}><strong>{source}</strong><span>{area}</span><i>→</i><b>{result}</b></div>)}
+            </div>
+            <div className="integration-stack"><span>React</span><span>Vue</span><span>Angular</span><span>HTML / CSS</span><span>API</span></div>
+          </div>
         </div>
       </section>
 
@@ -219,8 +229,8 @@ export default function Home() {
       </section>
 
       <section className="section faq" id="faq" data-reveal>
-        <div className="faq-intro"><p className="eyebrow">FAQ</p><h2>Часто задаваемые вопросы</h2><p>Ответы, которые помогут принять решение уверенно — без рисков для бренда и безопасности.</p></div>
-        <div className="accordion">{faqs.map(([q,a],index)=><article className={faq===index?"open":""} key={q}><button aria-expanded={faq===index} onClick={()=>setFaq(faq===index?-1:index)}><span>{q}</span><i>{faq===index?'−':'+'}</i></button><div><p>{a}</p></div></article>)}</div>
+        <div className="section-heading"><h2>Часто задаваемые вопросы</h2><p>Ответы, которые помогут вам принять решение уверенно — без рисков для бренда и безопасности</p></div>
+        <div className="accordion">{[faqs.slice(0,4),faqs.slice(4)].map((column,columnIndex)=><div className="accordion-column" key={columnIndex}>{column.map(([q,a],rowIndex)=>{const index=columnIndex*4+rowIndex;return <article className={faq===index?"open":""} key={q}><button aria-expanded={faq===index} onClick={()=>setFaq(faq===index?-1:index)}><span>{q}</span><i>{faq===index?'−':'+'}</i></button><div><p>{a}</p></div></article>})}</div>)}</div>
       </section>
 
       <section className="section contact" id="contact" data-reveal>
@@ -239,7 +249,7 @@ export default function Home() {
 
       <section className="final-cta" data-reveal><div><BrandMark /><h2>Профессиональные материалы<br />в фирменном стиле<br /><span>за минуты, а не дни</span></h2><a className="button button-light launch-cta" href="#contact"><span>Начать сейчас</span></a></div></section>
 
-      <footer className="footer"><div className="footer-brand"><BrandMark /><p>Платформа, где всё создаётся в рамках вашего бренда и дизайн-системы.</p></div><div><b>Навигация</b><a href="#product">Продукт</a><a href="#formats">Возможности</a><a href="#security">Безопасность</a><a href="#faq">FAQ</a></div><div><b>Контакты</b><a href="mailto:hey@snapbuild.ru">hey@snapbuild.ru</a><a href="#contact">Запросить демо</a></div><p className="copyright">© 2026 Снэпбилд. Все права защищены.</p></footer>
+      <footer className="footer"><div className="footer-brand"><BrandMark /><p>Платформа, где всё создаётся в рамках вашего бренда и дизайн-системы.</p></div><div><b>Навигация</b><a href="#product">Продукт</a><a href="#formats">Возможности</a><a href="#compare">Преимущества</a><a href="#security">Безопасность</a><a href="#roadmap">Роадмап</a><a href="#faq">Частые вопросы</a></div><div><b>Документация</b><a href="https://snapbuild.ru/privacy" target="_blank" rel="noreferrer">Политика конфиденциальности</a><a href="#faq">FAQ</a></div><div><b>Контакты</b><a href="https://t.me/ochen_darya" target="_blank" rel="noreferrer">Запросить демо</a><a href="https://t.me/snapbuild" target="_blank" rel="noreferrer">Telegram</a></div><p className="copyright">© Сгенерировано в Снэпбилде. Все права защищены.</p><a className="footer-email" href="mailto:hey@snapbuild.ru">hey@snapbuild.ru</a></footer>
     </main>
   );
 }
