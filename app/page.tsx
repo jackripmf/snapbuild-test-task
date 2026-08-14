@@ -1,7 +1,5 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element -- static Vite build, images are local WebP assets */
-
 import { FormEvent, useEffect, useState } from "react";
 
 const teams = [
